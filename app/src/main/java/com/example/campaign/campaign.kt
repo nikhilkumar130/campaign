@@ -26,9 +26,10 @@ class campaign : Fragment() {
         var array:ArrayList<String> = arrayListOf("Filter","Filter1","Filter2","Filter3","Filter4")
 
         var SPINNER=view.spinner
-        var adapaterspinner=ArrayAdapter<String>(view.context,android.R.layout.simple_spinner_item)
+        var adapaterspinner=ArrayAdapter<String>(view.context,android.R.layout.simple_spinner_item,array)
 
         adapaterspinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        SPINNER.adapter=adapaterspinner
 
 
         val data=campaign_data("Diwilisale","2","1","06:02 pm, 21 Oct 2019")
@@ -58,9 +59,6 @@ class campaign : Fragment() {
 
         var adpater=recyclerAdapter(a)
         view.recyclerview_campaign.adapter=adpater
-
-
-
 
         return view
     }
