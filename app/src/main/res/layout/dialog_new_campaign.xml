@@ -108,9 +108,40 @@
             android:background="@drawable/background"
             android:gravity="center|start"
             android:paddingStart="20dp"
+            android:visibility="visible"
             android:text="@string/Select"
             android:textColor="@color/floating"
             app:layout_constraintTop_toBottomOf="@id/Message_material" />
+
+        <Spinner
+            android:id="@+id/reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/spinner_background"
+            android:gravity="center|start"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Message_material" />
+
+        <Spinner
+            android:id="@+id/reason1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/spinner_background"
+            android:gravity="center|start"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reason" />
+
+
 
         <Button
             android:id="@+id/customers"
