@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".campaign">
+    tools:context=".Camapaign.campaign">
 
     <LinearLayout
         app:layout_constraintTop_toTopOf="parent"
@@ -29,15 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:text="@string/clear"
-            android:textColor="@color/Blue" />
+            android:text="@string/credit"
+            android:textColor="@color/floating" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_margin="5dp"
-            android:layout_weight="0.6"
+            android:layout_weight="0.7"
             android:background="@drawable/spinner_background">
 
         </Spinner>
@@ -47,7 +47,7 @@
             android:id="@+id/new_campaign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/Blue"
+            android:backgroundTint="@color/floating"
             android:text="@string/New_Campaign" />
 
         <Button
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/Blue"
+            android:backgroundTint="@color/floating"
             android:text="@string/clear" />
 
 
@@ -75,7 +75,7 @@
         <TableRow
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/Grey"
+            android:background="@color/floating"
             android:gravity="center|start"
             android:weightSum="5">
 

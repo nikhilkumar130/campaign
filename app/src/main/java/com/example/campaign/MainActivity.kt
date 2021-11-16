@@ -2,7 +2,8 @@ package com.example.campaign
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
+import com.example.campaign.Camapaign.campaign
+import com.example.campaign.Customer.customers
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

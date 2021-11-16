@@ -3,7 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="clear">Clear</string>
+    <string name="credit">975</string>
     <string name="Add_new_customer">Add New Customer</string>
+    <string name="Add_customer">Add Customer</string>
     <string name="New_Campaign">New Campaign</string>
     <string name="campaign_credits">Campaign Credits:</string>
     <string name="name">Name</string>
@@ -11,6 +13,44 @@
     <string name="select_all">Select All</string>
     <string name="clear_selection">Clear Selection</string>
     <string name="number">Number</string>
+    <string name="customers">Customers</string>
+    <string name="oo">00</string>
+    <string name="Message">Message</string>
+    <string name="Select">SELECT</string>
+    <string name="Campaign_name">Campaign Name</string>
+    <string name="firstname">First Name</string>
+    <string name="Mobile_Number">Mobile Number</string>
+    <string name="Alernate_Number">Alernate Number</string>
+    <string name="prefix">+91</string>
+    <string name="dob">DOB</string>
+    <string name="email">Email_ID</string>
+    <string name="firstvisit">First Visit</string>
+    <string name="lastvisit">Last Visit</string>
+    <string name="line">-</string>
+    <string name="familysize">Family Size</string>
+    <string name="gstin">GSTIN No.</string>
+    <string name="city">City</string>
+    <string name="enable">Enable Campaign</string>
+    <string name="Average_Basket">Average Basket</string>
+    <string name="Multiple_Price">Multiple Price</string>
+    <string name="Enter_Postal_Code">Enter Postal Code</string>
+    <string name="ltv">LTV(Optional)</string>
+    <string name="address">Address</string>
+    <string name="save">SAVE</string>
+    <string name="Select_customers">Select Customers</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="Credits_Used">Credits Used</string>

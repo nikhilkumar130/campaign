@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".campaign">
+    tools:context=".Camapaign.campaign">
 
     <EditText
         android:id="@+id/searchView"
@@ -41,17 +41,17 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/view"
-        app:layout_constraintEnd_toStartOf="@id/new_campaign"
-        android:text="@string/clear"
-        android:textColor="@color/Blue" />
+        app:layout_constraintEnd_toStartOf="@id/new_campaign_cus"
+        android:text="@string/credit"
+        android:textColor="@color/floating" />
 
 
 
     <Button
-        android:id="@+id/new_campaign"
+        android:id="@+id/new_campaign_cus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/Blue"
+        android:backgroundTint="@color/floating"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@id/view"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:backgroundTint="@color/Blue"
+        android:backgroundTint="@color/floating"
         android:text="@string/Add_new_customer"
         app:layout_constraintBottom_toTopOf="@id/view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
         android:layout_height="1.2dp"/>
 
     <CheckBox
-        android:id="@+id/select_all_checkbox"
+        android:id="@+id/select_all_checkbox_customers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -88,13 +88,14 @@
         android:text="@string/select_all"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView
+        android:id="@+id/clear_selection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/clear_selection"
         android:textStyle="bold"
         android:layout_marginEnd="20dp"
-        android:textColor="@color/Blue"
+        android:textColor="@color/floating"
         app:layout_constraintBottom_toTopOf="@id/recyclerview_customer"
         app:layout_constraintTop_toBottomOf="@id/view"/>
 
@@ -109,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/select_all_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/select_all_checkbox_customers"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>

@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabGravity="start"
         app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/Grey"
+        app:tabIndicatorColor="@color/floating"
         app:tabMode="scrollable"
         app:tabIndicatorAnimationMode="linear"
         app:tabIndicatorGravity="stretch">

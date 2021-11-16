@@ -13,6 +13,7 @@ class Customers_adapter(var dat:ArrayList<customer_data>):RecyclerView.Adapter<C
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         var NAME=itemView.Customer_name
         var NUMBER=itemView.Customer_number
+        var checkbox=itemView.customers_checkbox
 
     }
 
