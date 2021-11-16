@@ -6,57 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".Camapaign.campaign">
 
-    <EditText
-        android:id="@+id/searchView"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchview_material"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/background"
+        android:layout_height="wrap_content"
         android:hint="@string/search"
-        android:paddingEnd="10dp"
-        android:paddingStart="10dp"
-        android:drawableEnd="@drawable/ic_baseline_search_24"
-        android:layout_marginTop="5dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toStartOf="@id/text1"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/view"
-        app:layout_constraintEnd_toStartOf="@id/text"
         android:text="@string/campaign_credits"
         android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintEnd_toStartOf="@id/text"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/credit"
+        android:textColor="@color/floating"
         app:layout_constraintBottom_toTopOf="@id/view"
         app:layout_constraintEnd_toStartOf="@id/new_campaign_cus"
-        android:text="@string/credit"
-        android:textColor="@color/floating" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
         android:id="@+id/new_campaign_cus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/floating"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="5dp"
+        android:backgroundTint="@color/floating"
+        android:text="@string/New_Campaign"
         app:layout_constraintBottom_toTopOf="@id/view"
         app:layout_constraintEnd_toStartOf="@id/addcustomer"
-        android:text="@string/New_Campaign" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/addcustomer"
@@ -68,15 +72,16 @@
         app:layout_constraintBottom_toTopOf="@id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:background="@color/Grey"
+        android:layout_height="1.2dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/Grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
-        android:layout_height="1.2dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchview_material" />
 
     <CheckBox
         android:id="@+id/select_all_checkbox_customers"
@@ -84,20 +89,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:paddingStart="15dp"
-        app:layout_constraintTop_toBottomOf="@id/view"
         android:text="@string/select_all"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
     <TextView
         android:id="@+id/clear_selection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/clear_selection"
-        android:textStyle="bold"
         android:layout_marginEnd="20dp"
+        android:text="@string/clear_selection"
         android:textColor="@color/floating"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/recyclerview_customer"
-        app:layout_constraintTop_toBottomOf="@id/view"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -118,9 +124,9 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/floating"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/floating"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

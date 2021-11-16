@@ -18,7 +18,9 @@ import kotlinx.android.synthetic.main.dialog_header.view.*
 import kotlinx.android.synthetic.main.dialog_new_campaign.view.*
 import kotlinx.android.synthetic.main.select_customers.view.*
 
-class Select_Customers:DialogFragment() {
+class Select_Customers : DialogFragment() {
+
+    lateinit var selected_customers: New_campaign_Select_customers
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,36 +28,51 @@ class Select_Customers:DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         dialog?.setCanceledOnTouchOutside(false)
-        val view=inflater.inflate(R.layout.select_customers,container,false)
+        val view = inflater.inflate(R.layout.select_customers, container, false)
 
 
-        var selected_customers=New_campaign_Select_customers(Data.array)
+        var selected_customers = New_campaign_Select_customers(Data.array)
 
 
-        view.recyclerview_Select_Customers.adapter=selected_customers
+        view.recyclerview_Select_Customers.adapter = selected_customers
 
         view.New1.setText(R.string.Select_customers)
 
 
+        var select = view.select_all_checkbox
+        select.setOnClickListener {
+            if (select.isChecked) {
+                selected_customers.checkbox(select.isChecked)
+            } else {
+                selected_customers.checkbox(false)
+            }
+        }
+
+        var clear_selection=view.clear_selections_customers
+        clear_selection.setOnClickListener {
+            if (select.isChecked) {
+                select.toggle()
+                selected_customers.checkbox(false)
+            }
+        }
+
+
         //textWatcher
-
-
-
-        var text:ArrayList<customer_data> = arrayListOf()
-        view.searchView_customers.addTextChangedListener(object :TextWatcher{
+        var text: ArrayList<customer_data> = arrayListOf()
+        view.searchView_customers.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 text.clear()
-                if (s!!.isEmpty()){
-                    var selected_customers=New_campaign_Select_customers(Data.array)
-                    view.recyclerview_Select_Customers.adapter=selected_customers
-                } else{
-                    for (a in Data.array){
-                        if (a.Name.lowercase().contains(s.toString().lowercase())){
+                if (s!!.isEmpty()) {
+                    selected_customers = New_campaign_Select_customers(Data.array)
+                    view.recyclerview_Select_Customers.adapter = selected_customers
+                } else {
+                    for (a in Data.array) {
+                        if (a.Name.lowercase().contains(s.toString().lowercase())) {
                             text.add(a)
-                            var selected_customers=New_campaign_Select_customers(text)
-                            view.recyclerview_Select_Customers.adapter=selected_customers
+                            selected_customers = New_campaign_Select_customers(text)
+                            view.recyclerview_Select_Customers.adapter = selected_customers
 
                         }
                     }
@@ -78,7 +95,6 @@ class Select_Customers:DialogFragment() {
 
         return view
     }
-
 
 
     override fun onStart() {

@@ -1,7 +1,5 @@
 package com.example.campaign
 
-import android.widget.CheckBox
-import android.widget.Checkable
 
 data class campaign_data(
     var name: String,

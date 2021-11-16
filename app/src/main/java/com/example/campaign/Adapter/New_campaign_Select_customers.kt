@@ -12,9 +12,17 @@ import java.util.zip.Inflater
 
 class New_campaign_Select_customers(var store: ArrayList<customer_data>) :
     RecyclerView.Adapter<New_campaign_Select_customers.ViewHolder>() {
+
+    var check:Boolean=false
+    fun checkbox(Box:Boolean){
+        check=Box
+        notifyDataSetChanged()
+    }
+
     class ViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
         var customer_name = itemview.Customer_name1
         var customer_number = itemview.Customer_number1
+        var customer_checkbox=itemview.select_customers_checkbox
 
     }
 
@@ -31,6 +39,7 @@ class New_campaign_Select_customers(var store: ArrayList<customer_data>) :
 
         holder.customer_name.text=Customer_Name
         holder.customer_number.text=Customer_Number
+        holder.customer_checkbox.setChecked(check)
 
     }
 

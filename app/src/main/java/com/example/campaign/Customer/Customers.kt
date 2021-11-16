@@ -2,14 +2,13 @@ package com.example.campaign.Customer
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.Selection.selectAll
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.Checkable
-import android.widget.Toast
+import android.widget.*
 import com.example.campaign.Adapter.Customers_adapter
 import com.example.campaign.Data
 import com.example.campaign.Data.Companion.customer
@@ -19,9 +18,14 @@ import com.example.campaign.Data.Companion.customer3
 import com.example.campaign.Data.Companion.customer4
 import com.example.campaign.R
 import com.example.campaign.customer_data
+import kotlinx.android.synthetic.main.fragment_customers.*
 import kotlinx.android.synthetic.main.fragment_customers.view.*
+import kotlinx.android.synthetic.main.itemview_customers.*
 
 class customers : Fragment() {
+
+    lateinit var adpater: Customers_adapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -32,14 +36,12 @@ class customers : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_customers, container, false)
-
+        var checkbox = view.select_all_checkbox_customers
         view.addcustomer.setOnClickListener {
             New_Customer_Dialog().show(requireFragmentManager(), "New Customer")
         }
-        view.clear_selection.setOnClickListener {
-            Toast.makeText(view.context, "qwertyuiop", Toast.LENGTH_SHORT).show()
-            !view.select_all_checkbox_customers.isChecked
-        }
+
+
         Data.array.add(customer)
         Data.array.add(customer)
         Data.array.add(customer1)
@@ -66,13 +68,24 @@ class customers : Fragment() {
 
 
 
-        var adpater = Customers_adapter(Data.array)
+        adpater = Customers_adapter(Data.array)
         view.recyclerview_customer.adapter = adpater
 
-        var select = view.select_all_checkbox_customers
-//        if(select.isChecked){
-//            Customers_adapter(array).dat[0].checkbox.isChecked
-//        }
+
+        checkbox.setOnClickListener {
+            if (checkbox.isChecked) {
+                adpater.selectall(checkbox.isChecked)
+            } else{
+                adpater.selectall(false)
+            }
+        }
+
+        view.clear_selection.setOnClickListener {
+            if (checkbox.isChecked) {
+                checkbox.toggle()
+                adpater.selectall(false)
+            }
+        }
 
 
         var FilteredList: ArrayList<customer_data> = arrayListOf()
@@ -85,13 +98,13 @@ class customers : Fragment() {
                 FilteredList.clear()
 
                 if (s!!.isEmpty()) {
-                    var adpater = Customers_adapter(Data.array)
+                    adpater = Customers_adapter(Data.array)
                     view.recyclerview_customer.adapter = adpater
                 } else {
                     for (obj in Data.array) {
                         if (obj.Name.lowercase().contains(s.toString().lowercase())) {
                             FilteredList.add(obj)
-                            var adpater = Customers_adapter(FilteredList)
+                            adpater = Customers_adapter(FilteredList)
                             view.recyclerview_customer.adapter = adpater
                         }
 
