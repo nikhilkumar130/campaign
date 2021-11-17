@@ -33,6 +33,10 @@ class Dialog : DialogFragment() {
 
         view.select.setOnClickListener {
 
+            view.reason.isVisible=true
+            view.reason1.isVisible=true
+            view.select.isVisible=false
+
         }
 
         view.select_spinner.setOnClickListener {

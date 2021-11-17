@@ -18,45 +18,28 @@
     <string name="Message">Message</string>
     <string name="Select">SELECT</string>
     <string name="Campaign_name">Campaign Name</string>
-    <string name="firstname">First Name</string>
-    <string name="Mobile_Number">Mobile Number</string>
-    <string name="Alernate_Number">Alernate Number</string>
+    <string name="firstname">*First Name</string>
+    <string name="Mobile_Number">*Mobile Number</string>
+    <string name="Alernate_Number">Alernate Number(Optional)</string>
     <string name="prefix">+91</string>
-    <string name="dob">DOB</string>
-    <string name="email">Email_ID</string>
+    <string name="dob">DOB(Optional)</string>
+    <string name="email">Email_ID(Optional)</string>
     <string name="firstvisit">First Visit</string>
     <string name="lastvisit">Last Visit</string>
     <string name="line">-</string>
-    <string name="familysize">Family Size</string>
-    <string name="gstin">GSTIN No.</string>
+    <string name="familysize">Family Size(Optional)</string>
+    <string name="gstin">GSTIN No.(Optional)</string>
     <string name="city">City</string>
     <string name="enable">Enable Campaign</string>
     <string name="Average_Basket">Average Basket</string>
     <string name="Multiple_Price">Multiple Price</string>
     <string name="Enter_Postal_Code">Enter Postal Code</string>
     <string name="ltv">LTV(Optional)</string>
-    <string name="address">Address</string>
+    <string name="address">Address(Optional)</string>
     <string name="save">SAVE</string>
     <string name="Select_customers">Select Customers</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="add">Add</string>
     <string name="Credits_Used">Credits Used</string>
     <string name="Walkin_Customers"> Walkin Customers </string>
     <string name="Date">Date</string>
-
-
-
 </resources>
