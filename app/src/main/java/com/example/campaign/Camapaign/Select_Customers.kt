@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
 import com.example.campaign.Adapter.New_campaign_Select_customers
@@ -31,7 +32,8 @@ class Select_Customers : DialogFragment() {
         val view = inflater.inflate(R.layout.select_customers, container, false)
 
 
-        var selected_customers = New_campaign_Select_customers(Data.array)
+        selected_customers = New_campaign_Select_customers(Data.array)
+        Toast.makeText(view.context, "${Data.array}", Toast.LENGTH_SHORT).show()
 
 
         view.recyclerview_Select_Customers.adapter = selected_customers
@@ -48,7 +50,7 @@ class Select_Customers : DialogFragment() {
             }
         }
 
-        var clear_selection=view.clear_selections_customers
+        var clear_selection = view.clear_selections_customers
         clear_selection.setOnClickListener {
             if (select.isChecked) {
                 select.toggle()
@@ -88,11 +90,6 @@ class Select_Customers : DialogFragment() {
         view.cross_delete1.setOnClickListener {
             dialog?.dismiss()
         }
-
-
-
-
-
         return view
     }
 
@@ -101,10 +98,10 @@ class Select_Customers : DialogFragment() {
         super.onStart()
 
         //we can
-        val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
+//        val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
 //        val height = (resources.displayMetrics.heightPixels * 1.00).toInt()
-
-//        dialog!!.window?.setLayout(width,ViewGroup.LayoutParams.WRAP_CONTENT)
+//
+//        dialog!!.window?.setLayout(width,height)
         dialog!!.window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
     }
 

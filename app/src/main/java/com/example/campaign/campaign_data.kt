@@ -21,6 +21,7 @@ class Data {
         var customer4 = customer_data("Venketesh", "9642592051")
         var array = ArrayList<customer_data>()
 
+
     }
 
 }

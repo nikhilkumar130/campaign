@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <include
         android:id="@+id/header1"
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/customers_material"
         app:layout_constraintTop_toTopOf="parent">
 
     </include>
@@ -26,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header1"
+        app:layout_constraintBottom_toTopOf="@+id/view1"
         app:startIconDrawable="@drawable/ic_baseline_search_24">
 
 
@@ -43,6 +46,7 @@
         android:background="#6666"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/select_all_checkbox"
         app:layout_constraintTop_toBottomOf="@id/customers_material" />
 
     <TextView
@@ -66,6 +70,7 @@
         android:paddingStart="15dp"
         android:text="@string/select_all"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view1" />
 
@@ -76,29 +81,31 @@
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerview_Select_Customers"
         app:layout_constraintTop_toBottomOf="@id/select_all_checkbox" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_Select_Customers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
         android:orientation="vertical"
+        tools:listitem="@layout/itemview_select_customers"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view2">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        app:layout_constraintBottom_toTopOf="@id/Add"
+        />
 
     <Button
         android:id="@+id/Add"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/add"
-        app:layout_constraintTop_toBottomOf="@id/recyclerview_Select_Customers"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
