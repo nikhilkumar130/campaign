@@ -33,7 +33,7 @@ class Select_Customers : DialogFragment() {
 
 
         selected_customers = New_campaign_Select_customers(Data.array)
-        Toast.makeText(view.context, "${Data.array}", Toast.LENGTH_SHORT).show()
+        
 
 
         view.recyclerview_Select_Customers.adapter = selected_customers

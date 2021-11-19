@@ -43,25 +43,27 @@ class customers : Fragment() {
 
 
         Data.array.add(customer)
+        Data.array.add(customer1)
+        Data.array.add(customer2)
+        Data.array.add(customer3)
+        Data.array.add(customer4)
         Data.array.add(customer)
         Data.array.add(customer1)
         Data.array.add(customer2)
         Data.array.add(customer3)
         Data.array.add(customer4)
-        Data.array.add(customer1)
-        Data.array.add(customer)
-        Data.array.add(customer2)
-        Data.array.add(customer3)
-        Data.array.add(customer)
         Data.array.add(customer)
         Data.array.add(customer1)
         Data.array.add(customer2)
         Data.array.add(customer3)
         Data.array.add(customer4)
-        Data.array.add(customer1)
         Data.array.add(customer)
+        Data.array.add(customer1)
         Data.array.add(customer2)
         Data.array.add(customer3)
+        Data.array.add(customer4)
+
+
 
 
 
